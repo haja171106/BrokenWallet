@@ -1,6 +1,7 @@
 package weAreBroke;
 
 import java.time.LocalDate;
+import java.time.LocalDate;
 
 public class Expense {
     private String label;
@@ -25,4 +26,14 @@ public class Expense {
         return date;
     }
 
+    public boolean isLargeExpense() {
+        return amount > 100.0;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Expense[label=%s, amount=%.2f, date=%s]",
+                label, amount, date);
+    }
 }
+
