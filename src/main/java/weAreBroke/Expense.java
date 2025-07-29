@@ -24,4 +24,5 @@ public class Expense {
     public LocalDate getDate() {
         return date;
     }
+
 }
