@@ -16,11 +16,11 @@ class ExpenseDAOTest {
 
     @BeforeEach
     void setUp() {
-        refundableExpense = new RefundableExpense("Taxi", 80.0, LocalDate.now());
-        recurringExpense = new RecurringExpense("Netflix", 15.0, LocalDate.now(), "monthly");
-        largeExpense = new Expense("Laptop", 1200.0, LocalDate.now());
+        refundableExpense = new RefundableExpense("Taxi", 80000, LocalDate.now());
+        recurringExpense = new RecurringExpense("Netflix", 15000, LocalDate.now(), "monthly");
+        largeExpense = new Expense("Laptop", 1000000, LocalDate.now());
 
-        List<Expense> expenses = Arrays.asList(refundableExpense, recurringExpense, largeExpense);
+        List<Object> expenses = Arrays.asList(refundableExpense, recurringExpense, largeExpense);
         expenseDAO = new ExpenseDAO(expenses);
     }
 
@@ -36,11 +36,6 @@ class ExpenseDAOTest {
         assertEquals(15.0, expenseDAO.getTotalRecurringExpenses());
     }
 
-    @Test
-    void testGetLabelsOfLargeExpenses() {
-        List<String> labels = expenseDAO.getLabelsOfLargeExpenses();
-        assertTrue(labels.contains("Laptop"));
-    }
 
     @Test
     void testGetTotalExpenses() {

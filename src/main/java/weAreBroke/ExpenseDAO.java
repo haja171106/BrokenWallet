@@ -2,11 +2,11 @@ package weAreBroke;
 
 import java.util.*;
 import java.util.stream.*;
-import java.time.LocalDate;
- public class ExpenseDAO {
+
+public class ExpenseDAO {
         private List<Expense> expenses;
 
-        public ExpenseDAO() {
+        public ExpenseDAO(List<Object> expenses) {
             this.expenses = new ArrayList<>();
         }
 
